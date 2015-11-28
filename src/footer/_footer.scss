@@ -1,0 +1,10 @@
+.footer {
+  right: rem-calc(40);
+  position: fixed;
+  text-align: right;
+  bottom: rem-calc(20);
+
+  &-link {
+    font-weight: bold;
+  }
+}

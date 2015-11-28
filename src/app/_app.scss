@@ -1,0 +1,45 @@
+@function make-long-shadow($color) {
+  $val: 0px 0px $color;
+  @for $i from 1 through 50 {
+    $val: #{$val}, #{$i}px #{$i}px #{$color};
+  }
+  @return $val;
+}
+
+@mixin long-shadow($color) {
+  text-shadow: make-long-shadow($color);
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Cabin', sans-serif;
+}
+
+a {
+  color: #fff;
+}
+
+#app {
+  height: 100%;
+}
+
+.brand {
+  font-family: 'Lobster', cursive;
+}
+
+.centered {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.timebox {
+  background-color: $primary-color;
+  color: #fff;
+  height: 100%;
+  text-align: center;
+  transition: background-color 50ms ease-in;
+}

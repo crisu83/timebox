@@ -1,0 +1,33 @@
+.timer {
+  &-title {
+    font-family: 'Lobster Two', cursive;
+    font-size: rem-calc(50);
+    margin-bottom: rem-calc(20);
+  }
+
+  &-buttons {
+    margin: rem-calc(40) 0;
+  }
+
+  &-button {
+    background: #fff;
+    color: $primary-color;
+  }
+
+  &-text {
+    @include long-shadow(darken($primary-color, 5%));
+    font-size: rem-calc(100);
+    line-height: 100%;
+    margin-bottom: rem-calc(80);
+  }
+
+  &-action {
+    @extend .timer-button;
+    margin: 0;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+      color: #fff;
+    }
+  }
+}

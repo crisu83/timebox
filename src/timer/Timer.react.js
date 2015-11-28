@@ -18,40 +18,32 @@ var Timer = React.createClass({
   startTimer(minutes) {
     var duration = moment.duration(minutes * 60 * 1000);
     // var duration = moment.duration(5000);
-    var millis = 1000;
     var fn = () => {
-      this.changeState({duration: duration});
+      this.setState({duration: duration});
 
-      duration.subtract(millis, 'ms');
+      duration.subtract(1, 's');
 
       if (duration.asMilliseconds() < 0) {
-        this.changeState({name: TimerConstants.TIMER_TIMESUP});
+        this.setState({name: TimerConstants.TIMER_TIMESUP});
       }
     }
 
     fn();
 
-    this.changeState({name: TimerConstants.TIMER_STARTED});
+    this.setState({name: TimerConstants.TIMER_STARTED});
 
-    this.interval = setInterval(fn, millis);
+    this.interval = setInterval(fn, 1000);
   },
   stopTimer() {
     clearInterval(this.interval);
 
-    setTimeout(() => {
-      this.changeState({
-        name: TimerConstants.TIMER_STOPPED,
-        duration: null
-      });
-    }, 1000);
-  },
-  changeState(state) {
-    this.setState(state);
-
-    this.props.onTimerChange.call(this, this.state);
+    this.setState({
+      name: TimerConstants.TIMER_STOPPED,
+      duration: null
+    });
   },
   renderIdle() {
-    var buttonNodes = this.props.buttons.map((button) => {
+    var buttons = this.props.buttons.map((button) => {
       return (
         <a key={button.id}
            className="timer-button button large"
@@ -63,18 +55,27 @@ var Timer = React.createClass({
 
     return (
       <div className="timer">
-        <h2>How much time do you have?</h2>
-        <div className="buttons">{buttonNodes}</div>
+        <h2 className="timer-title">How much time do you have?</h2>
+        <div className="timer-buttons">{buttons}</div>
       </div>
     );
   },
+  renderTime() {
+    if (!this.state.duration) {
+      return null;
+    }
+
+    var minutes = Math.round(this.state.duration.asMinutes());
+
+    return minutes > 1 ? `${minutes} minutes` : `${minutes} minute`;
+  },
   renderRunning() {
-    var timeText = this.state.duration ? this.state.duration.humanize() : null;
+    var timeText = this.state.duration ? Math.round(this.state.duration.asMinutes()) : null;
 
     return (
       <div className="timer">
-        <h2>You have...</h2>
-        <div className="timer-text">{timeText}</div>
+        <h2 className="timer-title">You have...</h2>
+        <div className="timer-text">{this.renderTime()}</div>
         <a className="timer-action button large"
           onClick={this.stopTimer}>Cancel</a>
       </div>
@@ -83,8 +84,8 @@ var Timer = React.createClass({
   renderDone() {
     return (
       <div className="timer">
-        <h2>That's it...</h2>
-        <div className="timer-text">time's up!</div>
+        <h2 className="timer-title">That's it...</h2>
+        <div className="timer-text">you're out of time!</div>
         <a className="timer-action button large"
           onClick={this.stopTimer}>Done</a>
       </div>
