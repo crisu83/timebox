@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Cabin);@import url(https://fonts.googleapis.com/css?family=Lobster);@import url(https://fonts.googleapis.com/css?family=Lobster+Two);@charset "UTF-8";
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -3069,43 +3069,45 @@ table.hover tr:nth-of-type(even):hover {
 html {
   height: 100%; }
 
+body {
+  font-family: 'Cabin', sans-serif; }
+
 a {
   color: #fff; }
 
 #app {
   height: 100%; }
 
-.timebox {
-  background-color: #2199e8;
-  color: #fff;
-  height: 100%;
-  text-align: center;
-  transition: background-color 50ms ease-in;
-  /* &.running {
-    background-color: $success-color;
-  } */ }
-  .timebox.timesup {
-    background-color: #ec5840; }
-
-header {
-  left: 2.5rem;
-  position: fixed;
-  text-align: left;
-  top: 1.25rem; }
+.brand {
+  font-family: 'Lobster', cursive; }
 
 .centered {
   position: relative;
   top: 50%;
   transform: translateY(-50%); }
 
-.title {
+.timebox {
+  background-color: #2199e8;
+  color: #fff;
+  height: 100%;
+  text-align: center;
+  transition: background-color 50ms ease-in; }
+
+.header {
+  left: 2.5rem;
+  position: fixed;
+  text-align: left;
+  top: 1.25rem; }
+
+.timer-title {
+  font-family: 'Lobster Two', cursive;
   font-size: 3.125rem;
   margin-bottom: 1.25rem; }
 
-.buttons {
+.timer-buttons {
   margin: 2.5rem 0; }
 
-.button {
+.timer-button, .timer-action {
   background: #fff;
   color: #2199e8; }
 
@@ -3113,8 +3115,7 @@ header {
   text-shadow: 0px 0px #168cd9, 1px 1px #168cd9, 2px 2px #168cd9, 3px 3px #168cd9, 4px 4px #168cd9, 5px 5px #168cd9, 6px 6px #168cd9, 7px 7px #168cd9, 8px 8px #168cd9, 9px 9px #168cd9, 10px 10px #168cd9, 11px 11px #168cd9, 12px 12px #168cd9, 13px 13px #168cd9, 14px 14px #168cd9, 15px 15px #168cd9, 16px 16px #168cd9, 17px 17px #168cd9, 18px 18px #168cd9, 19px 19px #168cd9, 20px 20px #168cd9, 21px 21px #168cd9, 22px 22px #168cd9, 23px 23px #168cd9, 24px 24px #168cd9, 25px 25px #168cd9, 26px 26px #168cd9, 27px 27px #168cd9, 28px 28px #168cd9, 29px 29px #168cd9, 30px 30px #168cd9, 31px 31px #168cd9, 32px 32px #168cd9, 33px 33px #168cd9, 34px 34px #168cd9, 35px 35px #168cd9, 36px 36px #168cd9, 37px 37px #168cd9, 38px 38px #168cd9, 39px 39px #168cd9, 40px 40px #168cd9, 41px 41px #168cd9, 42px 42px #168cd9, 43px 43px #168cd9, 44px 44px #168cd9, 45px 45px #168cd9, 46px 46px #168cd9, 47px 47px #168cd9, 48px 48px #168cd9, 49px 49px #168cd9, 50px 50px #168cd9;
   font-size: 6.25rem;
   line-height: 100%;
-  margin-bottom: 5rem;
-  transition: text-shadow 100ms ease-in; }
+  margin-bottom: 5rem; }
 
 .timer-action {
   margin: 0; }
@@ -3122,33 +3123,10 @@ header {
     background-color: #147dc2;
     color: #fff; }
 
-/* .timebox.running {
-  .timer-text {
-    @include long-shadow(darken($success-color, 7%));
-  }
-
-  .timer-action {
-    color: $success-color;
-
-    &:hover {
-      background-color: darken($success-color, 10%);
-      color: #fff;
-    }
-  }
-} */
-.timebox.timesup .timer-text {
-  text-shadow: 0px 0px #e93c20, 1px 1px #e93c20, 2px 2px #e93c20, 3px 3px #e93c20, 4px 4px #e93c20, 5px 5px #e93c20, 6px 6px #e93c20, 7px 7px #e93c20, 8px 8px #e93c20, 9px 9px #e93c20, 10px 10px #e93c20, 11px 11px #e93c20, 12px 12px #e93c20, 13px 13px #e93c20, 14px 14px #e93c20, 15px 15px #e93c20, 16px 16px #e93c20, 17px 17px #e93c20, 18px 18px #e93c20, 19px 19px #e93c20, 20px 20px #e93c20, 21px 21px #e93c20, 22px 22px #e93c20, 23px 23px #e93c20, 24px 24px #e93c20, 25px 25px #e93c20, 26px 26px #e93c20, 27px 27px #e93c20, 28px 28px #e93c20, 29px 29px #e93c20, 30px 30px #e93c20, 31px 31px #e93c20, 32px 32px #e93c20, 33px 33px #e93c20, 34px 34px #e93c20, 35px 35px #e93c20, 36px 36px #e93c20, 37px 37px #e93c20, 38px 38px #e93c20, 39px 39px #e93c20, 40px 40px #e93c20, 41px 41px #e93c20, 42px 42px #e93c20, 43px 43px #e93c20, 44px 44px #e93c20, 45px 45px #e93c20, 46px 46px #e93c20, 47px 47px #e93c20, 48px 48px #e93c20, 49px 49px #e93c20, 50px 50px #e93c20; }
-
-.timebox.timesup .timer-action {
-  color: #ec5840; }
-  .timebox.timesup .timer-action:hover {
-    background-color: #e23317;
-    color: #fff; }
-
-footer {
+.footer {
   right: 2.5rem;
   position: fixed;
   text-align: right;
   bottom: 1.25rem; }
-  footer .link {
+  .footer-link {
     font-weight: bold; }
