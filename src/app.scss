@@ -1,0 +1,129 @@
+@import "../node_modules/foundation-sites/scss/foundation.scss";
+@import "settings.scss";
+
+@include foundation-everything;
+
+@function make-long-shadow($color) {
+  $val: 0px 0px $color;
+  @for $i from 1 through 50 {
+    $val: #{$val}, #{$i}px #{$i}px #{$color};
+  }
+  @return $val;
+}
+
+@mixin long-shadow($color) {
+  text-shadow: make-long-shadow($color);
+}
+
+html {
+  height: 100%;
+}
+
+a {
+  color: #fff;
+}
+
+#app {
+  height: 100%;
+}
+
+.timebox {
+  background-color: $primary-color;
+  color: #fff;
+  height: 100%;
+  text-align: center;
+  transition: background-color 50ms ease-in;
+
+  /* &.running {
+    background-color: $success-color;
+  } */
+
+  &.timesup {
+    background-color: $alert-color;
+  }
+}
+
+header {
+  left: rem-calc(40);
+  position: fixed;
+  text-align: left;
+  top: rem-calc(20);
+}
+
+.centered {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.title {
+  font-size: rem-calc(50);
+  margin-bottom: rem-calc(20);
+}
+
+.buttons {
+  margin: rem-calc(40) 0;
+}
+
+.button {
+  background: #fff;
+  color: $primary-color;
+}
+
+.timer-text {
+  @include long-shadow(darken($primary-color, 5%));
+  font-size: rem-calc(100);
+  line-height: 100%;
+  margin-bottom: rem-calc(80);
+  transition: text-shadow 100ms ease-in;
+}
+
+.timer-action {
+  margin: 0;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    color: #fff;
+  }
+}
+
+/* .timebox.running {
+  .timer-text {
+    @include long-shadow(darken($success-color, 7%));
+  }
+
+  .timer-action {
+    color: $success-color;
+
+    &:hover {
+      background-color: darken($success-color, 10%);
+      color: #fff;
+    }
+  }
+} */
+
+.timebox.timesup {
+  .timer-text {
+    @include long-shadow(darken($alert-color, 7%));
+  }
+
+  .timer-action {
+    color: $alert-color;
+
+    &:hover {
+      background-color: darken($alert-color, 10%);
+      color: #fff;
+    }
+  }
+}
+
+footer {
+  right: rem-calc(40);
+  position: fixed;
+  text-align: right;
+  bottom: rem-calc(20);
+
+  .link {
+    font-weight: bold;
+  }
+}
