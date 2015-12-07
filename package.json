@@ -1,8 +1,8 @@
 {
   "name": "timebox",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
-  "main": "src/app.js",
+  "main": "src/main.js",
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --inline --hot --progress --colors",
     "dist": "./node_modules/.bin/webpack",
