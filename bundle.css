@@ -3075,7 +3075,7 @@ body {
 a {
   color: #fff; }
 
-#app {
+#root {
   height: 100%; }
 
 .brand {
@@ -3090,8 +3090,25 @@ a {
   background-color: #2199e8;
   color: #fff;
   height: 100%;
-  text-align: center;
-  transition: background-color 50ms ease-in; }
+  text-align: center; }
+  .timebox.state-running {
+    background-color: #23bf5d; }
+    .timebox.state-running .timer-button, .timebox.state-running .timer-action {
+      color: #23bf5d; }
+    .timebox.state-running .timer-text {
+      text-shadow: 0px 0px #1faa53, 1px 1px #1faa53, 2px 2px #1faa53, 3px 3px #1faa53, 4px 4px #1faa53, 5px 5px #1faa53, 6px 6px #1faa53, 7px 7px #1faa53, 8px 8px #1faa53, 9px 9px #1faa53, 10px 10px #1faa53, 11px 11px #1faa53, 12px 12px #1faa53, 13px 13px #1faa53, 14px 14px #1faa53, 15px 15px #1faa53, 16px 16px #1faa53, 17px 17px #1faa53, 18px 18px #1faa53, 19px 19px #1faa53, 20px 20px #1faa53, 21px 21px #1faa53, 22px 22px #1faa53, 23px 23px #1faa53, 24px 24px #1faa53, 25px 25px #1faa53, 26px 26px #1faa53, 27px 27px #1faa53, 28px 28px #1faa53, 29px 29px #1faa53, 30px 30px #1faa53, 31px 31px #1faa53, 32px 32px #1faa53, 33px 33px #1faa53, 34px 34px #1faa53, 35px 35px #1faa53, 36px 36px #1faa53, 37px 37px #1faa53, 38px 38px #1faa53, 39px 39px #1faa53, 40px 40px #1faa53, 41px 41px #1faa53, 42px 42px #1faa53, 43px 43px #1faa53, 44px 44px #1faa53, 45px 45px #1faa53, 46px 46px #1faa53, 47px 47px #1faa53, 48px 48px #1faa53, 49px 49px #1faa53, 50px 50px #1faa53; }
+    .timebox.state-running .timer-action:hover {
+      background-color: #1b9448;
+      color: #fff; }
+  .timebox.state-done {
+    background-color: #ec5840; }
+    .timebox.state-done .timer-button, .timebox.state-done .timer-action {
+      color: #ec5840; }
+    .timebox.state-done .timer-text {
+      text-shadow: 0px 0px #ea4429, 1px 1px #ea4429, 2px 2px #ea4429, 3px 3px #ea4429, 4px 4px #ea4429, 5px 5px #ea4429, 6px 6px #ea4429, 7px 7px #ea4429, 8px 8px #ea4429, 9px 9px #ea4429, 10px 10px #ea4429, 11px 11px #ea4429, 12px 12px #ea4429, 13px 13px #ea4429, 14px 14px #ea4429, 15px 15px #ea4429, 16px 16px #ea4429, 17px 17px #ea4429, 18px 18px #ea4429, 19px 19px #ea4429, 20px 20px #ea4429, 21px 21px #ea4429, 22px 22px #ea4429, 23px 23px #ea4429, 24px 24px #ea4429, 25px 25px #ea4429, 26px 26px #ea4429, 27px 27px #ea4429, 28px 28px #ea4429, 29px 29px #ea4429, 30px 30px #ea4429, 31px 31px #ea4429, 32px 32px #ea4429, 33px 33px #ea4429, 34px 34px #ea4429, 35px 35px #ea4429, 36px 36px #ea4429, 37px 37px #ea4429, 38px 38px #ea4429, 39px 39px #ea4429, 40px 40px #ea4429, 41px 41px #ea4429, 42px 42px #ea4429, 43px 43px #ea4429, 44px 44px #ea4429, 45px 45px #ea4429, 46px 46px #ea4429, 47px 47px #ea4429, 48px 48px #ea4429, 49px 49px #ea4429, 50px 50px #ea4429; }
+    .timebox.state-done .timer-action:hover {
+      background-color: #e23317;
+      color: #fff; }
 
 .header {
   left: 2.5rem;
