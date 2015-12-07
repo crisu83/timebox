@@ -4,7 +4,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   context: path.join(__dirname, 'src'),
-  entry: './app.js',
+  entry: './main.js',
   output: {
     path: 'dist',
     filename: 'bundle.js'
@@ -26,7 +26,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'timebox',
-      template: './src/app.html',
+      template: './src/main.html',
       inject: 'body'
     }),
     new ExtractTextPlugin('bundle.css')

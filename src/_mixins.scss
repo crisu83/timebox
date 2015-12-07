@@ -1,0 +1,30 @@
+@function make-long-shadow($color) {
+  $val: 0px 0px $color;
+  @for $i from 1 through 50 {
+    $val: #{$val}, #{$i}px #{$i}px #{$color};
+  }
+  @return $val;
+}
+
+@mixin long-shadow($color) {
+  text-shadow: make-long-shadow($color);
+}
+
+@mixin timebox-state($color) {
+  background-color: $color;
+
+  .timer {
+    &-button {
+      color: $color;
+    }
+
+    &-text {
+      @include long-shadow(darken($color, 5%));
+    }
+
+    &-action:hover {
+      background-color: darken($color, 10%);
+      color: #fff;
+    }
+  }
+}

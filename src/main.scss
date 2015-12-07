@@ -3,6 +3,7 @@
 @include foundation-everything;
 
 @import "settings.scss";
+@import "mixins.scss";
 @import "app/app.scss";
 @import "header/header.scss";
 @import "timer/timer.scss";
